@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(value = "/api/generos")
+@RequestMapping(value = "/api/genero")
 public class GeneroResourceImpl implements GeneroResource {
 
 	private final GeneroService service;
@@ -47,10 +47,8 @@ public class GeneroResourceImpl implements GeneroResource {
 	public ResponseEntity<GeneroDTO> insert(@RequestBody @Valid GeneroInputDTO genero) {
 		Genero entity = mapper.toEntity(genero);
 		Genero createdEntity = this.service.insert(entity);
-
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(createdEntity.getId()).toUri();
-
 		return ResponseEntity.status(HttpStatus.CREATED).header(HttpHeaders.LOCATION, location.toString())
 				.body(mapper.toDTO(createdEntity));
 	}
@@ -59,10 +57,6 @@ public class GeneroResourceImpl implements GeneroResource {
 	public ResponseEntity<GeneroDTO> update(Long id, @Valid GeneroInputDTO genero) {
 		Genero toUpdate = this.service.findById(id);
 		toUpdate.setDescricao(genero.getDescricao());
-		toUpdate.setInclusao(genero.getInclusao());
-		toUpdate.setAlteracao(genero.getAlteracao());
-		toUpdate.setExclusao(genero.getExclusao());
-
 		Genero updated = this.service.update(toUpdate);
 		return ResponseEntity.ok(mapper.toDTO(updated));
 	}

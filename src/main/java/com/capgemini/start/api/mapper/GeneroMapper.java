@@ -7,13 +7,14 @@ import com.capgemini.start.api.dto.input.GeneroInputDTO;
 import com.capgemini.start.api.dto.output.GeneroDTO;
 import com.capgemini.start.domain.entity.Genero;
 
-
 @Component
 @Mapper(componentModel = "spring")
 public interface GeneroMapper {
 
-	GeneroDTO toDTO(Genero entity);
+	GeneroDTO toDTO(Genero genero);
 
 	@Mapping(target = "id", ignore = true)
-	Genero toEntity(GeneroInputDTO dto);
+	@Mapping(target = "dataCadastro", ignore = true)
+	@Mapping(target = "dataAlteracao", ignore = true)
+	Genero toEntity(GeneroInputDTO genero);
 }

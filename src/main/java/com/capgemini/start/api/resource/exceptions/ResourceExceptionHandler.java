@@ -1,18 +1,16 @@
 package com.capgemini.start.api.resource.exceptions;
 
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
 import com.capgemini.start.domain.service.exceptions.ObjectAlreadyExistsException;
 import com.capgemini.start.domain.service.exceptions.ObjectNotFoundException;
 
@@ -23,7 +21,7 @@ public class ResourceExceptionHandler {
 	public ResponseEntity<StandardError> objectNotFound(ObjectNotFoundException ex, HttpServletRequest request) {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
 				new StandardError(
-							LocalDateTime.now(), 
+						LocalDateTime.now(), 
 							request.getMethod(),
 							ex.getMessage(),
 							HttpStatus.NOT_FOUND.value(), 
@@ -38,7 +36,7 @@ public class ResourceExceptionHandler {
 	public ResponseEntity<StandardError> objectAlreadyExists(ObjectAlreadyExistsException ex, HttpServletRequest request) {
 		return ResponseEntity.status(HttpStatus.CONFLICT).body(
 				new StandardError(
-							LocalDateTime.now(), 
+						LocalDateTime.now(), 
 							request.getMethod(),
 							ex.getMessage(),
 							HttpStatus.CONFLICT.value(), 
@@ -59,7 +57,7 @@ public class ResourceExceptionHandler {
 	    });
 	    return ResponseEntity.badRequest().body(
 	    		new StandardError(
-						LocalDateTime.now(),
+	    				LocalDateTime.now(),
 						request.getMethod(),
 						"BAD REQUEST",
 						HttpStatus.BAD_REQUEST.value(), 

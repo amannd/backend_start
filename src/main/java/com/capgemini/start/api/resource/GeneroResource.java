@@ -14,7 +14,7 @@ import com.capgemini.start.api.dto.output.GeneroDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "Gênero", description = "Gênero do Filme ou Série.")
+@Tag(name = "Genero", description = "Gênero do Filme ou Série.")
 public interface GeneroResource {
 
 	@Operation(summary = "Consulta um Gênero por ID.")

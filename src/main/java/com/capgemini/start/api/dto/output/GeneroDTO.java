@@ -1,6 +1,6 @@
 package com.capgemini.start.api.dto.output;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +16,6 @@ public class GeneroDTO {
 
 	private Long id;
 	private String descricao;
-	private Date inclusao;
-	private Date alteracao;
-	private Date exclusao;
+	private LocalDateTime dataCadastro;
+	private LocalDateTime dataAlteracao;
 }
