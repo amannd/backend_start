@@ -22,14 +22,12 @@ public class Genero {
 	@EqualsAndHashCode.Include
 	@Column(name = "ID_GENERO", nullable = false)
 	private Long id;
-
 	@Column(name = "DS_GENERO", nullable = false)
 	private String descricao;
-	
 	@Column(name = "DT_INCLUSAO", nullable = false)
 	private Date inclusao;
-	
 	@Column(name = "DT_ALTERACAO", nullable = false)
 	private Date alteracao;
-
+	@Column(name = "DT_EXCLUSAO", nullable = false)
+	private Date exclusao;
 }

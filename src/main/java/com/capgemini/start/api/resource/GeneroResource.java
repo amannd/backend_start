@@ -14,7 +14,7 @@ import com.capgemini.start.api.dto.output.GeneroDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "Gênero", description = "Gênero do Filme.")
+@Tag(name = "Gênero", description = "Gênero do Filme ou Série.")
 public interface GeneroResource {
 
 	@Operation(summary = "Consulta um Gênero por ID.")
@@ -29,7 +29,7 @@ public interface GeneroResource {
 	@PostMapping()
 	ResponseEntity<GeneroDTO> insert(@RequestBody @Valid GeneroInputDTO genero);
 
-	@Operation(summary = "Atualiza um Gênero.")
+	@Operation(summary = "Atualiza um Gênero pelo ID.")
 	@PutMapping(value = "/{id}")
 	ResponseEntity<GeneroDTO> update(@PathVariable Long id, @RequestBody @Valid GeneroInputDTO genero);
 

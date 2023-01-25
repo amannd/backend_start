@@ -61,6 +61,7 @@ public class GeneroResourceImpl implements GeneroResource {
 		toUpdate.setDescricao(genero.getDescricao());
 		toUpdate.setInclusao(genero.getInclusao());
 		toUpdate.setAlteracao(genero.getAlteracao());
+		toUpdate.setExclusao(genero.getExclusao());
 
 		Genero updated = this.service.update(toUpdate);
 		return ResponseEntity.ok(mapper.toDTO(updated));
