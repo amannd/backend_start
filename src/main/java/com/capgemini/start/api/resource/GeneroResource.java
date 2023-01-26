@@ -36,5 +36,4 @@ public interface GeneroResource {
 	@Operation(summary = "Exclui um Gênero pelo ID.")
 	@DeleteMapping(value = "/{id}")
 	ResponseEntity<Void> delete(@PathVariable Long id);
-
 }

@@ -19,20 +19,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity(name = "TB_GENERO")
 public class Genero {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
 	@Column(name = "ID_GENERO", nullable = false)
 	private Long id;
-
 	@Column(name = "DS_GENERO", nullable = false, length = 100)
 	private String descricao;
-
 	@Column(name = "DT_INCLUSAO", nullable = false)
 	private Date dataCadastro;
-
 	@Column(name = "DT_ALTERACAO")
 	private Date dataAlteracao;
-
 }

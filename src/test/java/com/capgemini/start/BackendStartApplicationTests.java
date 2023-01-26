@@ -9,5 +9,4 @@ class BackendStartApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
