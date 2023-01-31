@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(value = "/api/genero")
+@RequestMapping(value = "/api/generos")
 public class GeneroResourceImpl implements GeneroResource {
 
 	private final GeneroService service;
